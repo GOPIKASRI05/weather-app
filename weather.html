@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #3b3f63;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="city" placeholder="Enter city name">
+        <button onclick="displayWeather()">Show Weather</button>
+    </div>
+    <div class="container" id="weatherContainer">
+        <h2>Weather App</h2>
+        <h3 id="displayCity"></h3>
+        <p>Temperature: <span id="temperature">25°C</span></p>
+        <p>Weather: <span id="weather">Sunny</span></p>
+        <p>Humidity: <span id="humidity">60%</span></p>
+        <p>Wind Speed: <span id="wind">5 m/s</span></p>
+    </div>
+    <script>
+        function displayWeather() {
+            const city = document.getElementById('city').value;
+            if (city) {
+                document.getElementById('displayCity').innerText = `City: ${city}`;
+                document.getElementById('weatherContainer').style.display = 'block';
+            } else {
+                alert("Please enter a city name.");
+            }
+        }
+    </script>
+</body>
+</html>
